@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="bg-success text-center text-white">
+        <span class="h1">Catálogo de muebles</span>
+    </header>
+
+    <section id="contenedor">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+                <div v-for="mueble in muebles" :key="mueble.id" class="col d-flex justify-content-center">
+                    <div class="card h-100" style="width: 18rem;">
+                        <img :src="mueble.image" class="card-img-top" alt="Imagen">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ mueble.name }}</h5>
+                            <p class="card-text"><strong>Price: </strong>${{ mueble.price }}</p>
+                            <div v-for="color in mueble.colors" :key="color" 
+                                 :style="{ backgroundColor: color, width: '20px', height: '20px', display: 'inline-block', borderRadius: '50%' }">
+                            </div>
+                            <p class="card-text"><strong>Category: </strong>{{ mueble.category }}</p>
+                            <button class="btn btn-primary" @click="vermas(mueble)">Ver más</button>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/vue3.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/script.js"></script>
+    <script></script>
+</body>
+</html>
