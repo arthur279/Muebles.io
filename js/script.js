@@ -18,8 +18,15 @@ const inst = Vue.createApp({
     methods:{
         llamarMuebles(){
             axios.get("https://www.course-api.com/react-store-products").then(respuesta =>{
-                this.muebles = respuesta.data;
+                this.muebles = respuesta.data.splice(0,15);
                 console.log(respuesta);
+
+                let i=1;
+                for(mueble of this.muebles){
+                    mueble.cantidad = i;
+                    this.muebles.mueble;
+                    i=Math.floor(Math.random()*(50-1)+1);
+                }
             })
         },
         vermas(mueble) {

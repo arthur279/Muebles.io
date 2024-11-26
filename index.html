@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
     <title>Document</title>
 </head>
 <body>
-    <header class="bg-success text-center text-white">
-        <span class="h1">Catálogo de muebles</span>
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="navbar-brand">Catálogo de Muebles</h1>
+        </nav>
     </header>
+    
 
     <section id="contenedor">
         <div class="container">
@@ -25,6 +30,7 @@
                                  :style="{ backgroundColor: color, width: '20px', height: '20px', display: 'inline-block', borderRadius: '50%' }">
                             </div>
                             <p class="card-text"><strong>Category: </strong>{{ mueble.category }}</p>
+                            <p class="card-text"><strong>Cantidad: </strong>{{ mueble.cantidad }}</p>
                             <button class="btn btn-primary" @click="vermas(mueble)">Ver más</button>  
                         </div>
                     </div>
@@ -32,7 +38,12 @@
             </div>
         </div>
     </section>
-    
+
+    <footer class="footer">
+        <div class="container text-center">
+            </a>
+        </div>
+    </footer>
     
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
